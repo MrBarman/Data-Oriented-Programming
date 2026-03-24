@@ -22,6 +22,7 @@ public class GuardedPattern {
         switch (object){
             case Short s -> log.info("short {}", s);
             case Double d -> log.info("double {}", d);
+            // when is a case label additional condition known as guarded pattern
             case Integer i when i < 0 -> log.info("negative int {}", i);
             case Integer i -> log.info("int {}", i);//this line must come after above otherwise it would be unreachable
             case Number n -> log.info("number {}", n);
